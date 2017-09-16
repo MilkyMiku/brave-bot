@@ -11,7 +11,7 @@ module.exports = (bot) => {
           if (err) console.log(err)
           bot.sendMessage({
             to: channelID,
-            message: "Sounds: \n" + table(list.map(str => str.replace('.ogg', '')))
+            message: "Sounds: \n" + table(_.chunk(list.map(str => str.replace('.ogg', ''))), 5)
           })
         })
         return
