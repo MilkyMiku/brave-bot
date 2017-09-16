@@ -5,6 +5,7 @@ const path = require('path')
 module.exports = (bot) => {
   bot.on('message', (user, userID, channelID, message, event) => {
     if (message.startsWith('$')) {
+      channelID = bot.getVoiceChannel(event)
       try {
         // try to join correct channel
         bot.joinVoiceChannel(channelID, (error, events) => {
@@ -20,7 +21,7 @@ module.exports = (bot) => {
       }
 
       try {
-        playSound(bot.getVoiceChannel(event), _.replace(message, '$', ''))
+        playSound(channelID, _.replace(message, '$', ''))
       } catch (e) {
         console.log(e)
       }
