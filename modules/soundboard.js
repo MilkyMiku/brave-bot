@@ -27,10 +27,10 @@ module.exports = (bot) => {
         // Without {end: false}, it would close up the stream, so make sure to include that.
         console.log('Playing sound:', filename)
         let read = fs.createReadStream(`./OKAERI.ogg`)
-        console.log('Stream made')
+        console.log('Stream made', __dirname)
 
         read.on('open', () => {
-          console.log('in open event')
+          console.log('in open event', __dirname)
           read.pipe(stream, {end: false})
           console.log('after pipe')
         })
