@@ -1,25 +1,23 @@
-const bot = require('./app');
-const _ = require('lodash');
+const _ = require('lodash')
 
 class NoRepeatList {
-  constructor(list, noRepeatList) {
-    this.list = _.clone(list);
-    this.noRep = _.clone(noRepeatList);
+  constructor (list, noRepeatList) {
+    this.list = _.clone(list)
+    this.noRep = _.clone(noRepeatList)
   }
 
-  get() {
-    let entity = list[_.random(0, list.length - 1)];
+  get () {
+    let entity = this.list[_.random(0, this.list.length - 1)]
     if (this.noRep.includes(entity)) {
       this.pick(entity)
     }
-    return entity;
+    return entity
   }
 
-  pick(entity) {
-    this.list = _.without(this.list, entity);
+  pick (entity) {
+    this.list = _.without(this.list, entity)
   }
 }
-
 
 module.exports = {
   NoRepeatList

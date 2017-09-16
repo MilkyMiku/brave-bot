@@ -1,26 +1,23 @@
-const bot = require('../app');
-const _ = require('lodash');
-const util = require('../util');
+const _ = require('lodash')
 
 module.exports = (bot) => {
-
-  bot.on('message', function(user, userID, channelID, message, event) {
-    if (message.startsWith("!_.random")) {
+  bot.on('message', function (user, userID, channelID, message, event) {
+    if (message.startsWith('!_.random')) {
       bot.sendMessage({
         to: channelID,
         message: doRoll(message)
       })
     }
 
-    if (message === "ping") {
-      console.log(user);
-      console.log(JSON.stringify(event, null, 2));
+    if (message === 'ping') {
+      console.log(user)
+      console.log(JSON.stringify(event, null, 2))
 
-      console.log(bot.getVoiceChannel(event));
+      console.log(bot.getVoiceChannel(event))
       bot.sendMessage({
         to: channelID,
-        message: "pong"
-      });
+        message: 'pong'
+      })
     }
 
     if (message === '!flip') {
@@ -32,12 +29,11 @@ module.exports = (bot) => {
     }
 
     if (message === 'DUCE') {
-      //play Duce soundclip
+      // play Duce soundclip
     }
-
   })
 
-  function doRoll(message) {
+  function doRoll (message) {
     let parts = message.split(' ')
     if (parts.length === 1) return _.random(1, 99)
     if (parts.length === 2) return _.random(1, parseInt(parts[1]), 10)
