@@ -6,22 +6,10 @@ module.exports = (bot) => {
   bot.on('message', (user, userID, channelID, message, event) => {
     if (message.startsWith('$')) {
       channelID = bot.getVoiceChannel(event)
-      try {
-        // try to join correct channel
-        bot.joinVoiceChannel(channelID, (error, events) => {
-          if (error) return console.error(error)
-          playSound(channelID, _.replace(message, '$', ''))
-        })
-        return
-      } catch (e) {
-        // ITS FINE
-      }
-
-      try {
+      bot.joinVoiceChannel(channelID, (error, events) => {
+        if (error) console.error(error.message)
         playSound(channelID, _.replace(message, '$', ''))
-      } catch (e) {
-        console.log(e)
-      }
+      })
     }
   })
 
