@@ -4,7 +4,11 @@ const _ = require('lodash')
 module.exports = (bot) => {
   bot.on('message', (user, userID, channelID, message, event) => {
     if (message.startsWith('$')) {
-      playSound(bot.getVoiceChannel(userID), _.replace(message, '$', ''))
+      try {
+        playSound(bot.getVoiceChannel(event), _.replace(message, '$', ''))
+      } catch (e) {
+        console.log(e)
+      }
     }
   })
 
@@ -21,13 +25,8 @@ module.exports = (bot) => {
 
         // Create a stream to your file and pipe it to the stream
         // Without {end: false}, it would close up the stream, so make sure to include that.
-        try {
-          console.log('Playing sound:', filename)
-          fs.createReadStream(`../soundFiles/${filename}.ogg`).pipe(stream, {end: false})
-        } catch (e) {
-          console.log(e)
-          return
-        }
+        console.log('Playing sound:', filename)
+        fs.createReadStream(`../soundFiles/${filename}.ogg`).pipe(stream, {end: false})
 
         // The stream fires `done` when it's got nothing else to send to Discord.
         stream.on('done', function () {
