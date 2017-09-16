@@ -26,11 +26,15 @@ module.exports = (bot) => {
         // Create a stream to your file and pipe it to the stream
         // Without {end: false}, it would close up the stream, so make sure to include that.
         console.log('Playing sound:', filename)
-        fs.createReadStream(`../soundFiles/${filename}.ogg`).pipe(stream, {end: false})
+        fs.createReadStream(`~/node/brave-bot/soundFiles/${filename}.ogg`).pipe(stream, {end: false})
 
         // The stream fires `done` when it's got nothing else to send to Discord.
         stream.on('done', function () {
           // Handle
+        })
+
+        stream.on('error', (error) => {
+          console.log(error)
         })
       })
     })
