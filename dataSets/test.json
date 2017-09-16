@@ -1,0 +1,648 @@
+{
+  "272692254249058304": {
+    "members": {},
+    "permissions": {
+      "user": {},
+      "role": {
+        "272692254249058304 ": {
+          "allow ": 0,
+          "deny ": 32768
+        }
+      }
+    },
+    "guild_id ": "272692254249058304 ",
+    "type ": "text ",
+    "topic ": "Welcome,Gamers.",
+    "position ": 0,
+    "parent_id ": null,
+    "nsfw ": true,
+    "name ": "nsfw-cgcococraiggeneral",
+    "last_pin_timestamp": "2017-09-13T18:29:33.693351+00:00",
+    "last_message_id ": "358392288558186496 ",
+    "id ": "272692254249058304 "
+  },
+  "272692254249058305 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {
+        "272692254249058304 ": {
+          "allow ": 0,
+          "deny ": 2097152
+        },
+        "272704273299800064 ": {
+          "allow ": 3145728,
+          "deny ": 0
+        }
+      }
+    },
+    "guild_id ": "272692254249058304 ",
+    "user_limit ": 0,
+    "type ": "voice ",
+    "position ": 20,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "AFK but not aka Quicking ",
+    "id ": "272692254249058305 ",
+    "bitrate": 64000
+  },
+  "272700460891111425": {
+    "members": {},
+    "permissions": {
+      "user": {},
+      "role ": {}
+    },
+    "guild_id ": "272692254249058304 ",
+    "user_limit ": 0,
+    "type ": "voice ",
+    "position ": 3,
+    "parent_id": null,
+    "nsfw": false,
+    "name": "Not Nimble",
+    "id": "272700460891111425",
+    "bitrate ": 64000
+  },
+  "272700491832492033 ": {
+    "members ": {
+      "117112505653919746 ": {
+        "user_id ": "117112505653919746 ",
+        "suppress": false,
+        "session_id": "534cb07225cf94b90d8548874b2460 fb ",
+        "self_video ": false,
+        "self_mute ": false,
+        "self_deaf ": false,
+        "mute ": false,
+        "deaf ": false,
+        "channel_id ": "272700491832492033 "
+      }
+    },
+    "permissions ": {
+      "user ": {},
+      "role ": {
+        "272692254249058304 ": {
+          "allow ": 0,
+          "deny ": 0
+        },
+        "311887193583124492 ": {
+          "allow ": 0,
+          "deny ": 3145728
+        }
+      }
+    },
+    "guild_id": "272692254249058304",
+    "user_limit": 0,
+    "type": "voice",
+    "position": 1,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "I want to die channel ",
+    "id ": "272700491832492033 ",
+    "bitrate ": 64000
+  },
+  "272700521314385921 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {
+        "272692254249058304 ": {
+          "allow ": 298048,
+          "deny ": 0
+        },
+        "272763980219416587 ": {
+          "allow ": 0,
+          "deny ": 805763153
+        }
+      }
+    },
+    "guild_id ": "272692254249058304 ",
+    "type ": "text ",
+    "topic ": "playing with yourself# NotEvolve ",
+    "position ": 1,
+    "parent_id ": null,
+    "nsfw ": true,
+    "name ": "nsfw - imaginecraigons ",
+    "last_pin_timestamp ": "2017 - 06 - 14 T08: 59: 39.824616 + 00: 00 ",
+    "last_message_id ": "357897381188206603 ",
+    "id ": "272700521314385921 "
+  },
+  "277864693912174602 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {}
+    },
+    "guild_id ": "272692254249058304",
+    "user_limit": 0,
+    "type": "voice",
+    "position": 14,
+    "parent_id": null,
+    "nsfw": false,
+    "name": "Nimble gaming",
+    "id": "277864693912174602",
+    "bitrate": 64000
+  },
+  "277919182769750016": {
+    "members": {},
+    "permissions": {
+      "user": {},
+      "role": {}
+    },
+    "guild_id ": "272692254249058304 ",
+    "user_limit ": 0,
+    "type ": "voice ",
+    "position ": 6,
+    "parent_id ": null,
+    "nsfw": false,
+    "name": "guilty quick xrd nimble",
+    "id": "277919182769750016",
+    "bitrate ": 64000
+  },
+  "277919324738551808 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {
+        "272692254249058304": {
+          "allow": 0,
+          "deny": 456768
+        }
+      }
+    },
+    "guild_id": "272692254249058304",
+    "type ": "text ",
+    "topic ": "",
+    "position ": 2,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "sidecraigs ",
+    "last_message_id ": "283528568221335552 ",
+    "id ": "277919324738551808 "
+  },
+  "278876776837545984 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {
+        "272692254249058304 ": {
+          "allow ": 0,
+          "deny ": 0
+        },
+        "276063552257916928 ": {
+          "allow ": 0,
+          "deny ": 0
+        }
+      }
+    },
+    "guild_id ": "272692254249058304 ",
+    "user_limit ": 0,
+    "type ": "voice ",
+    "position ": 15,
+    "parent_id ": null,
+    "nsfw": false,
+    "name": "Quick",
+    "id": "278876776837545984",
+    "bitrate": 64000
+  },
+  "280004473831555083 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {
+        "272692254249058304 ": {
+          "allow ": 0,
+          "deny ": 1048576
+        },
+        "280004846726414338 ": {
+          "allow ": 1048576,
+          "deny ": 0
+        }
+      }
+    },
+    "guild_id": "272692254249058304",
+    "user_limit": 0,
+    "type": "voice",
+    "position": 5,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "Nimble ",
+    "id ": "280004473831555083 ",
+    "bitrate ": 64000
+  },
+  "282081707803410432": {
+    "members": {},
+    "permissions": {
+      "user": {},
+      "role": {
+        "272692254249058304 ": {
+          "allow ": 0,
+          "deny ": 871366673
+        },
+        "282081861260541952 ": {
+          "allow ": 36700177,
+          "deny": 0
+        }
+      }
+    },
+    "guild_id": "272692254249058304",
+    "user_limit": 3,
+    "type": "voice",
+    "position ": 21,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "Nimble - Zone ",
+    "id ": "282081707803410432 ",
+    "bitrate ": 64000
+  },
+  "282317613638352896 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {}
+    },
+    "guild_id": "272692254249058304",
+    "user_limit": 0,
+    "type": "voice",
+    "position ": 17,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "Quick night ? ",
+    "id ": "282317613638352896 ",
+    "bitrate ": 64000
+  },
+  "282348668751970304 ": {
+    "members ": {},
+    "permissions ": {
+      "user": {},
+      "role ": {}
+    },
+    "guild_id ": "272692254249058304 ",
+    "user_limit ": 0,
+    "type ": "voice ",
+    "position ": 13,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "Quick.dj ",
+    "id ": "282348668751970304 ",
+    "bitrate ": 64000
+  },
+  "284438169909329932 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {}
+    },
+    "guild_id": "272692254249058304",
+    "user_limit": 0,
+    "type": "voice",
+    "position ": 19,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "The nimble ",
+    "id ": "284438169909329932 ",
+    "bitrate ": 64000
+  },
+  "284848795630698497 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {}
+    },
+    "guild_id": "272692254249058304",
+    "user_limit": 0,
+    "type": "voice",
+    "position ": 22,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "quickboi ",
+    "id ": "284848795630698497 ",
+    "bitrate ": 64000
+  },
+  "285888174746763265 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {}
+    },
+    "guild_id": "272692254249058304",
+    "user_limit": 0,
+    "type": "voice",
+    "position ": 24,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "nimbleork ",
+    "id ": "285888174746763265 ",
+    "bitrate ": 64000
+  },
+  "287041361310515201 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role": {}
+    },
+    "guild_id": "272692254249058304",
+    "user_limit": 0,
+    "type": "voice",
+    "position ": 25,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "erectile quickfunction ",
+    "id ": "287041361310515201 ",
+    "bitrate ": 64000
+  },
+  "290184366313963521 ": {
+    "members ": {},
+    "permissions ": {
+      "user": {},
+      "role": {
+        "272692254249058304": {
+          "allow": 0,
+          "deny": 1048576
+        },
+        "276063552257916928 ": {
+          "allow ": 1048576,
+          "deny ": 0
+        }
+      }
+    },
+    "guild_id ": "272692254249058304 ",
+    "user_limit ": 0,
+    "type ": "voice ",
+    "position ": 8,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "NiMBLE dota ",
+    "id ": "290184366313963521 ",
+    "bitrate ": 64000
+  },
+  "291039443819823104 ": {
+    "members ": {},
+    "permissions": {
+      "user": {},
+      "role": {}
+    },
+    "guild_id": "272692254249058304",
+    "user_limit ": 0,
+    "type ": "voice ",
+    "position ": 26,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "taihen nimble ne ",
+    "id ": "291039443819823104 ",
+    "bitrate ": 64000
+  },
+  "294111442196758530 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {
+        "272692254249058304 ": {
+          "allow ": 0,
+          "deny ": 1048576
+        },
+        "294111527135477762": {
+          "allow": 1048576,
+          "deny": 0
+        }
+      }
+    },
+    "guild_id": "272692254249058304 ",
+    "user_limit ": 0,
+    "type ": "voice ",
+    "position ": 4,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name": "quick",
+    "id": "294111442196758530",
+    "bitrate": 64000
+  },
+  "296296383038750731 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {}
+    },
+    "guild_id ": "272692254249058304 ",
+    "user_limit ": 0,
+    "type ": "voice ",
+    "position ": 12,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "nimbleris ",
+    "id ": "296296383038750731 ",
+    "bitrate ": 64000
+  },
+  "296335151628025857": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {}
+    },
+    "guild_id ": "272692254249058304 ",
+    "user_limit ": 0,
+    "type ": "voice ",
+    "position ": 16,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "daily lives of Nimble bois ",
+    "id ": "296335151628025857 ",
+    "bitrate ": 64000
+  },
+  "296472427939102720 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {
+        "272692254249058304 ": {
+          "allow ": 0,
+          "deny ": 3145728
+        },
+        "313830840855560193 ": {
+          "allow ": 3145728,
+          "deny ": 0
+        }
+      }
+    },
+    "guild_id": "272692254249058304",
+    "user_limit": 0,
+    "type": "voice",
+    "position": 11,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "Quicksouls ",
+    "id ": "296472427939102720 ",
+    "bitrate ": 64000
+  },
+  "299965882212548620 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {
+        "272692254249058304": {
+          "allow": 0,
+          "deny": 1048576
+        },
+        "307998719775604736": {
+          "allow": 1048576,
+          "deny": 0
+        }
+      }
+    },
+    "guild_id": "272692254249058304",
+    "user_limit": 0,
+    "type": "voice",
+    "position": 10,
+    "parent_id": null,
+    "nsfw": false,
+    "name": "Bastard bois",
+    "id": "299965882212548620 ",
+    "bitrate ": 64000
+  },
+  "303847949220315136 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {}
+    },
+    "guild_id ": "272692254249058304 ",
+    "user_limit ": 0,
+    "type ": "voice",
+    "position ": 7,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "Porn parody of an obscure movie channel...quick ",
+    "id ": "303847949220315136 ",
+    "bitrate ": 96000
+  },
+  "303938082045165568 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {}
+    },
+    "guild_id ": "272692254249058304 ",
+    "user_limit ": 0,
+    "type ": "voice ",
+    "position ": 9,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name": "Risk of Quick",
+    "id": "303938082045165568",
+    "bitrate": 64000
+  },
+  "307984143235547146 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {
+        "272692254249058304 ": {
+          "allow ": 0,
+          "deny ": 1048576
+        },
+        "307984257052311555 ": {
+          "allow ": 1048576,
+          "deny ": 0
+        }
+      }
+    },
+    "guild_id ": "272692254249058304 ",
+    "user_limit ": 0,
+    "type ": "voice ",
+    "position ": 23,
+    "parent_id": null,
+    "nsfw ": false,
+    "name ": "Quick Unknown Nimble Grounds ",
+    "id ": "307984143235547146 ",
+    "bitrate ": 64000
+  },
+  "319816347850637312 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {
+        "272692254249058304": {
+          "allow": 0,
+          "deny": 0
+        },
+        "319816408982880256": {
+          "allow": 3145728,
+          "deny": 0
+        }
+      }
+    },
+    "guild_id": "272692254249058304",
+    "user_limit": 0,
+    "type": "voice ",
+    "position ": 18,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "old school nimblescape ",
+    "id ": "319816347850637312 ",
+    "bitrate ": 64000
+  },
+  "335678042339016704 ": {
+    "members ": {
+      "228395318541025280 ": {
+        "user_id ": "228395318541025280 ",
+        "suppress ": false,
+        "session_id ": "55 dfabb773c28ef89b05bb62be2a87f0 ",
+        "self_video ": false,
+        "self_mute ": false,
+        "self_deaf": false,
+        "mute ": false,
+        "deaf ": false,
+        "channel_id ": "335678042339016704 "
+      },
+      "264488541680041985 ": {
+        "user_id ": "264488541680041985 ",
+        "suppress ": false,
+        "session_id ": "93805 d4497e3 dd2716dad24e8d0bfc20 ",
+        "self_video ": false,
+        "self_mute ": false,
+        "self_deaf ": false,
+        "mute": false,
+        "deaf": false,
+        "channel_id": "335678042339016704"
+      },
+      "275929450904944641 ": {
+        "user_id ": "275929450904944641 ",
+        "suppress ": false,
+        "session_id ": "8488e593 c9eafaee29ce579fb9f4e0fe ",
+        "self_video ": false,
+        "self_mute ": false,
+        "self_deaf ": false,
+        "mute ": false,
+        "deaf ": false,
+        "channel_id ": "335678042339016704 "
+      }
+    },
+    "permissions ": {
+      "user ": {},
+      "role ": {}
+    },
+    "guild_id": "272692254249058304",
+    "user_limit": 7,
+    "type": "voice",
+    "position ": 0,
+    "parent_id ": null,
+    "nsfw ": false,
+    "name ": "FOOKIN DEFENdaz ",
+    "id ": "335678042339016704 ",
+    "bitrate ": 96000
+  },
+  "355541457915871234 ": {
+    "members ": {},
+    "permissions ": {
+      "user ": {},
+      "role ": {}
+    },
+    "guild_id ": "272692254249058304 ",
+    "user_limit ": 0,
+    "type ": "voice ",
+    "position": 2,
+    "parent_id": null,
+    "nsfw": false,
+    "name": "hellraisers",
+    "id": "355541457915871234 ",
+    "bitrate ": 64000
+  }
+}

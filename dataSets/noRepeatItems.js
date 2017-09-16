@@ -1,0 +1,10 @@
+module.exports = [
+  "Veil of Discord",
+  "Ring of Aquila",
+  "Desolator",
+  "Drums of Endurance",
+  "Mekansm",
+  "Vladmirs Offering",
+  "Pipe of Insight",
+  "Assault Cuirass"
+]
