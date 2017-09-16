@@ -10,7 +10,7 @@ module.exports = (bot) => {
           if (err) console.log(err)
           bot.sendMessage({
             to: channelID,
-            message: list.map(str => str.replace(str, '.ogg', '')).join('\n')
+            message: list.map(str => str.replace('.ogg', '')).join('\n')
           })
         })
         return
