@@ -30,7 +30,9 @@ module.exports = (bot) => {
         console.log('Stream made')
 
         read.on('open', () => {
+          console.log('in open event')
           read.pipe(stream, {end: false})
+          console.log('after pipe')
         })
         // The stream fires `done` when it's got nothing else to send to Discord.
         stream.on('done', function () {
