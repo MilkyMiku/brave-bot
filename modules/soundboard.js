@@ -7,6 +7,8 @@ module.exports = (bot) => {
     if (message.startsWith('$')) {
       if (message === '$list') {
         let list = fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (thelist) => {
+          console.log(list)
+          console.log(thelist)
           bot.sendMessage({
             to: channelID,
             message: thelist || list
