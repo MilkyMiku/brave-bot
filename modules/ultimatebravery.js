@@ -20,7 +20,14 @@ module.exports = appBot => {
         to: channelID,
         message: `Enter enemy hero's name or first if you are first pick.`
       })
-      makeTeamBrave(userID, event)
+      try {
+        makeTeamBrave(userID, event)
+      } catch (e) {
+        bot.sendMessage({
+          to: channelID,
+          message: `I am slain, rip`
+        })
+      }
     }
   })
 }
@@ -74,7 +81,7 @@ function makeBrave (heroes, items, lanes, members) {
 function makeTeamBrave (userID, event) {
   // find team members
   let channelID = bot.getVoiceChannel(event)
-  let members = shuffle(_.keys(bot.channels[channelID].members).filter((key) => key !== bot.id))
+  let members = shuffle(_.keys(_.get(bot, `channels[${channelID}].members`)).filter((key) => key !== bot.id))
   BRAVE_COUNTER = members.length
 
   // initialize lists
