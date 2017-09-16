@@ -1,6 +1,7 @@
 const fs = require('fs')
 const _ = require('lodash')
 const path = require('path')
+const table = require('text-table')
 
 module.exports = (bot) => {
   bot.on('message', (user, userID, channelID, message, event) => {
@@ -10,7 +11,7 @@ module.exports = (bot) => {
           if (err) console.log(err)
           bot.sendMessage({
             to: channelID,
-            message: "Sounds: \n" + list.map(str => str.replace('.ogg', '')).join('\n')
+            message: "Sounds: \n" + table(list.map(str => str.replace('.ogg', '')))
           })
         })
         return
