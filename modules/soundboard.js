@@ -14,12 +14,7 @@ module.exports = (bot) => {
         })
         return
       } catch (e) {
-        if (e.message.includes('Voice channel already active')) {
-          // everythings fine
-        } else {
-          console.log(e)
-          return
-        }
+        // ITS FINE
       }
 
       try {
