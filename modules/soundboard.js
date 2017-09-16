@@ -6,12 +6,11 @@ module.exports = (bot) => {
   bot.on('message', (user, userID, channelID, message, event) => {
     if (message.startsWith('$')) {
       if (message === '$list') {
-        let list = fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (thelist) => {
-          console.log(list)
-          console.log(thelist)
+        fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (err, list) => {
+          if (err) console.log(err)
           bot.sendMessage({
             to: channelID,
-            message: thelist || list
+            message: list
           })
         })
         return
