@@ -10,7 +10,7 @@ module.exports = (bot) => {
           if (err) console.log(err)
           bot.sendMessage({
             to: channelID,
-            message: list
+            message: list.map(str => str.replace(str, '.ogg', '')).join('\n')
           })
         })
         return
@@ -24,7 +24,7 @@ module.exports = (bot) => {
     }
   })
 
-  function playSound (channelID, filename) {
+  function playSound(channelID, filename) {
     // Then get the audio context
     bot.getAudioContext(channelID, (error, stream) => {
       // Once again, check to see if any errors exist
