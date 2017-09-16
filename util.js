@@ -7,7 +7,7 @@ class NoRepeatList {
     this.noRep = _.clone(noRepeatList);
   }
 
-  get(size) {
+  get() {
     let entity = list[_.random(0, list.length - 1)];
     if (this.noRep.includes(entity)) {
       this.pick(entity)
