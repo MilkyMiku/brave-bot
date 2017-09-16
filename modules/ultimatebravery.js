@@ -82,7 +82,7 @@ function makeBrave (heroes, items, lanes, members) {
 function makeTeamBrave (userID, event) {
   // find team members
   let channelID = bot.getVoiceChannel(event)
-  let members = shuffle(_.keys(_.get(bot, `channels[${channelID}].members`)).filter((key) => key !== bot.id))
+  let members = shuffle(_.keys(_.get(bot, `channels[${channelID}].members`), []).filter((key) => key !== bot.id))
   BRAVE_COUNTER = members.length
 
   // initialize lists
@@ -144,6 +144,8 @@ function shuffle (arr) {
     arr[count] = arr[rand]
     arr[rand] = swap
   }
+
+  return arr
 }
 
 const boots = require('../dataSets/boots')
