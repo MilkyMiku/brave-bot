@@ -26,7 +26,7 @@ module.exports = (bot) => {
         // Create a stream to your file and pipe it to the stream
         // Without {end: false}, it would close up the stream, so make sure to include that.
         console.log('Playing sound:', filename)
-        let read = fs.createReadStream(`../soundFiles/${filename}.ogg`).pipe(stream, {end: false})
+        let read = fs.createReadStream(`./OKAERI.ogg`)
 
         read.on('open', () => {
           read.pipe(stream, {end: false})
