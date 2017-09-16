@@ -23,6 +23,7 @@ module.exports = appBot => {
       try {
         makeTeamBrave(userID, event)
       } catch (e) {
+        console.log(e)
         bot.sendMessage({
           to: channelID,
           message: `I am slain, rip`
