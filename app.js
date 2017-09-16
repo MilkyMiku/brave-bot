@@ -29,5 +29,6 @@ bot.getVoiceChannel = (event) => {
 require('./modules/misc')(bot)
 require('./modules/ultimatebravery')(bot)
 require('./modules/pubg')(bot)
+require('./modules/soundboard')(bot)
 
 module.exports = bot
