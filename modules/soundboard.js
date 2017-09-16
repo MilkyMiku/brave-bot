@@ -51,13 +51,6 @@ module.exports = (bot) => {
               })
               console.log('after pipe')
             })
-            // The stream fires `done` when it's got nothing else to send to Discord.
-            stream.on('done', () => {
-              // Handle
-            })
-            stream.on('error', (error) => {
-              console.log(error)
-            })
           } catch (e) {
             bot.sendMessage({
               to: channelID,
