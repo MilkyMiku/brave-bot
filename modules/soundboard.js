@@ -11,6 +11,7 @@ module.exports = (bot) => {
           to: channelID,
           message: list
         })
+        return
       }
 
       channelID = bot.getVoiceChannel(event)
@@ -30,9 +31,17 @@ module.exports = (bot) => {
       // Create a stream to your file and pipe it to the stream
       // Without {end: false}, it would close up the stream, so make sure to include that.
       console.log('Playing sound:', filename)
-      let read = fs.createReadStream(
-        path.join(`/home/pi/node/brave-bot/soundFiles`, `${filename}.ogg`))
-      console.log('Stream made', __dirname)
+      try {
+        var read = fs.createReadStream(
+          path.join(`/home/pi/node/brave-bot/soundFiles`, `${filename}.ogg`))
+        console.log('Stream made', __dirname)
+      } catch (e) {
+        bot.sendMessage({
+          to: channelID,
+          message: 'bad filename'
+        })
+        return
+      }
 
       read.on('open', () => {
         console.log('in open event', __dirname)
