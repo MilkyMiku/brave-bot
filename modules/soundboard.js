@@ -10,7 +10,9 @@ module.exports = (bot) => {
         // try to join correct channel
         bot.joinVoiceChannel(channelID, (error, events) => {
           if (error) return console.error(error)
+          playSound(channelID, _.replace(message, '$', ''))
         })
+        return
       } catch (e) {
         if (e.message.includes('Voice channel already active')) {
           // everythings fine
