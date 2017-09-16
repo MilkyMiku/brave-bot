@@ -3,8 +3,16 @@ const _ = require('lodash')
 const path = require('path')
 
 module.exports = (bot) => {
-  bot.on('message', (user, userID, channelID, message, event) => {
+  bot.on('message', async (user, userID, channelID, message, event) => {
     if (message.startsWith('$')) {
+      if (message === '$list') {
+        let list = await fs.readdir(`/home/pi/node/brave-bot/soundFiles`)
+        bot.sendMessage({
+          to: channelID,
+          message: list
+        })
+      }
+
       channelID = bot.getVoiceChannel(event)
       bot.joinVoiceChannel(channelID, (error, events) => {
         if (error) console.error(error.message)
