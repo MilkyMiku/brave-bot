@@ -37,29 +37,27 @@ module.exports = (bot) => {
         var read = fs.createReadStream(
           path.join(`/home/pi/node/brave-bot/soundFiles`, `${filename}.ogg`))
         console.log('Stream made', __dirname)
+
+        read.on('open', () => {
+          console.log('in open event', __dirname)
+          read.pipe(stream, {
+            end: false
+          })
+          console.log('after pipe')
+        })
+        // The stream fires `done` when it's got nothing else to send to Discord.
+        stream.on('done', () => {
+          // Handle
+        })
+        stream.on('error', (error) => {
+          console.log(error)
+        })
       } catch (e) {
         bot.sendMessage({
           to: channelID,
           message: 'bad filename'
         })
-        return
       }
-
-      read.on('open', () => {
-        console.log('in open event', __dirname)
-        read.pipe(stream, {
-          end: false
-        })
-        console.log('after pipe')
-      })
-      // The stream fires `done` when it's got nothing else to send to Discord.
-      stream.on('done', () => {
-        // Handle
-      })
-
-      stream.on('error', (error) => {
-        console.log(error)
-      })
     })
   }
 }
