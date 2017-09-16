@@ -1,4 +1,4 @@
-const pubg = require('../dataSets/pubg')
+const pubg = require('../dataSets/pubgPlaces')
 const _ = require('lodash')
 
 module.exports = bot => {
