@@ -33,37 +33,39 @@ module.exports = (bot) => {
       // Create a stream to your file and pipe it to the stream
       // Without {end: false}, it would close up the stream, so make sure to include that.
       console.log('Playing sound:', filename)
-      if (fs.access(`/home/pi/node/brave-bot/soundFiles`, `${filename}.ogg`)) {
-        try {
-          var read = fs.createReadStream(
-            path.join(`/home/pi/node/brave-bot/soundFiles`, `${filename}.ogg`))
-          console.log('Stream made', __dirname)
-          read.on('open', () => {
-            console.log('in open event', __dirname)
-            read.pipe(stream, {
-              end: false
-            })
-            console.log('after pipe')
-          })
-          // The stream fires `done` when it's got nothing else to send to Discord.
-          stream.on('done', () => {
-            // Handle
-          })
-          stream.on('error', (error) => {
-            console.log(error)
-          })
-        } catch (e) {
+      fs.access(path.join(`/home/pi/node/brave-bot/soundFiles`, `${filename}.ogg`), (err) => {
+        if (err) {
           bot.sendMessage({
             to: channelID,
             message: 'bad filename'
           })
+        } else {
+          try {
+            var read = fs.createReadStream(
+              path.join(`/home/pi/node/brave-bot/soundFiles`, `${filename}.ogg`))
+            console.log('Stream made', __dirname)
+            read.on('open', () => {
+              console.log('in open event', __dirname)
+              read.pipe(stream, {
+                end: false
+              })
+              console.log('after pipe')
+            })
+            // The stream fires `done` when it's got nothing else to send to Discord.
+            stream.on('done', () => {
+              // Handle
+            })
+            stream.on('error', (error) => {
+              console.log(error)
+            })
+          } catch (e) {
+            bot.sendMessage({
+              to: channelID,
+              message: 'bad filename'
+            })
+          }
         }
-      } else {
-        bot.sendMessage({
-          to: channelID,
-          message: 'bad filename'
-        })
-      }
+      })
     })
   }
 }
