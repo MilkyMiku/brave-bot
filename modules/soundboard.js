@@ -18,15 +18,16 @@ module.exports = (bot) => {
         return
       }
 
+      channelID = bot.getVoiceChannel(event)
+
       if (message === '$stopsound') {
-        bot.disconnect()
-        setTimeout(() => {
-          bot.connect()
-        }, 2000)
+        bot.getAudioContext(channelID, (error, stream) => {
+          if (error) return console.error(error)
+          stream.destroy()
+        })
         return
       }
 
-      channelID = bot.getVoiceChannel(event)
       bot.joinVoiceChannel(channelID, (error, events) => {
         if (error) console.error(error.message)
         try {
