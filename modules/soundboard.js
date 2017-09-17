@@ -21,7 +21,11 @@ module.exports = (bot) => {
       channelID = bot.getVoiceChannel(event)
       bot.joinVoiceChannel(channelID, (error, events) => {
         if (error) console.error(error.message)
-        playSound(channelID, _.replace(message.toLowerCase(), '$', ''))
+        try {
+          playSound(channelID, _.replace(message.toLowerCase(), '$', ''))
+        } catch (e) {
+          console.log(e)
+        }
       })
     }
   })
