@@ -23,11 +23,22 @@ module.exports = (bot) => {
       if (message === '$stopsound') {
         bot.getAudioContext(channelID, (error, stream) => {
           if (error) return console.error(error)
-          stream.stop()
+          stream.pause()
         })
         return
       }
 
+      bot.joinVoiceChannel(channelID, (error, events) => {
+        if (error) console.error(error.message)
+        try {
+          playSound(channelID, _.replace(message.toLowerCase(), '$', ''))
+        } catch (e) {
+          console.log(e)
+        }
+      })
+    }
+
+    if (message === ':10:') {
       bot.joinVoiceChannel(channelID, (error, events) => {
         if (error) console.error(error.message)
         try {
