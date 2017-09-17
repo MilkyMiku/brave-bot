@@ -23,7 +23,7 @@ module.exports = (bot) => {
       if (message === '$stopsound') {
         bot.getAudioContext(channelID, (error, stream) => {
           if (error) return console.error(error)
-          stream.pause()
+          stream.stop()
         })
         return
       }
