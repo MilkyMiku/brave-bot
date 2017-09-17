@@ -9,9 +9,10 @@ module.exports = (bot) => {
       if (message === '$list') {
         fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (err, list) => {
           if (err) console.log(err)
+          let format = _.flow(_.replace, _.partialRight(_.padEnd(20))
           bot.sendMessage({
             to: channelID,
-            message: table(_.chunk(list.map(str => str.replace('.ogg', '')), 5))
+            message: table(_.chunk(list.map(str => format(str, '.ogg', '')), 5))
           })
         })
         return
