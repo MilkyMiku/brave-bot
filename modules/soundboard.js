@@ -23,22 +23,11 @@ module.exports = (bot) => {
       if (message === '$stopsound') {
         bot.getAudioContext(channelID, (error, stream) => {
           if (error) return console.error(error)
-          stream.pause()
+          stream.stop()
         })
         return
       }
 
-      bot.joinVoiceChannel(channelID, (error, events) => {
-        if (error) console.error(error.message)
-        try {
-          playSound(channelID, _.replace(message.toLowerCase(), '$', ''))
-        } catch (e) {
-          console.log(e)
-        }
-      })
-    }
-
-    if (message === ':Theol10:') {
       bot.joinVoiceChannel(channelID, (error, events) => {
         if (error) console.error(error.message)
         try {
@@ -69,13 +58,10 @@ module.exports = (bot) => {
           try {
             var read = fs.createReadStream(
               path.join(`/home/pi/node/brave-bot/soundFiles`, `${filename}.ogg`))
-            console.log('Stream made', __dirname)
             read.on('open', () => {
-              console.log('in open event', __dirname)
               read.pipe(stream, {
                 end: false
               })
-              console.log('after pipe')
             })
           } catch (e) {
             bot.sendMessage({
