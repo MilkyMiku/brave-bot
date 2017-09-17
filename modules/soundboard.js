@@ -38,7 +38,7 @@ module.exports = (bot) => {
       })
     }
 
-    if (message === ':10:') {
+    if (message === ':Theol10:') {
       bot.joinVoiceChannel(channelID, (error, events) => {
         if (error) console.error(error.message)
         try {
