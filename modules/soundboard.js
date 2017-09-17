@@ -12,7 +12,7 @@ module.exports = (bot) => {
           let format = _.flow(_.replace, _.partialRight(_.padEnd, 20))
           bot.sendMessage({
             to: channelID,
-            message: table(_.chunk(list.map(str => format(str, '.ogg', '')), 5))
+            message: table(_.chunk(list.map(str => format(str, '.ogg', '')), 5), {align: ['l', 'l', 'l', 'l', 'l']})
           })
         })
         return
