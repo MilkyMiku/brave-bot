@@ -20,7 +20,9 @@ module.exports = (bot) => {
 
       if (message === '$stopsound') {
         bot.disconnect()
-        bot.connect()
+        setTimeout(() => {
+          bot.connect()
+        }, 2000)
         return
       }
 
