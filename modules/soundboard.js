@@ -31,7 +31,7 @@ module.exports = (bot) => {
       bot.joinVoiceChannel(channelID, (error, events) => {
         if (error) console.error(error.message)
         try {
-          playSound(channelID, _.replace(_.replace(message.toLowerCase(), '$', '')), ':', '')
+          playSound(channelID, _.replace(_.replace(message.toLowerCase(), '$', ''), ':', ''), user)
         } catch (e) {
           console.log(e)
         }
@@ -39,7 +39,7 @@ module.exports = (bot) => {
     }
   })
 
-  function playSound (channelID, filename) {
+  function playSound (channelID, filename, user) {
     // Then get the audio context
     bot.getAudioContext(channelID, (error, stream) => {
       // Once again, check to see if any errors exist
