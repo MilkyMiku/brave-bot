@@ -33,6 +33,10 @@ module.exports = (bot) => {
         if (error) console.error(error.message)
         try {
           playSound(channelID, _.replace(_.replace(message.toLowerCase(), '$', ''), /:/g, ''), user)
+          bot.sendMessage({
+            to: channelID,
+            message: `<:imgay:276261810892701696>`
+          })
         } catch (e) {
           console.log(e)
         }
