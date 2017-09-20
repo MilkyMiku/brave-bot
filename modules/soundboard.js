@@ -5,11 +5,7 @@ const table = require('text-table')
 
 module.exports = (bot) => {
   bot.on('message', (user, userID, channelID, message, event) => {
-    console.log(message)
-    bot.sendMessage({
-      to: channelID,
-      message: `<:imgay:276261810892701696>`
-    })
+    console.log(`${user} said ${message}`)
     if (message.startsWith('$') || message.startsWith(':')) {
       if (message === '$list') {
         fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (err, list) => {

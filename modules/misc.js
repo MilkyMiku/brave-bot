@@ -16,7 +16,7 @@ module.exports = (bot) => {
       console.log(bot.getVoiceChannel(event))
       bot.sendMessage({
         to: channelID,
-        message: 'pong'
+        message: `<:imgay:276261810892701696>`
       })
     }
 
