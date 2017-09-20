@@ -31,7 +31,7 @@ module.exports = (bot) => {
       bot.joinVoiceChannel(channelID, (error, events) => {
         if (error) console.error(error.message)
         try {
-          playSound(channelID, _.replace(_.replace(message.toLowerCase(), '$', ''), ':', ''), user)
+          playSound(channelID, _.replace(_.replace(message.toLowerCase(), '$', ''), /:/g, ''), user)
         } catch (e) {
           console.log(e)
         }
@@ -47,7 +47,7 @@ module.exports = (bot) => {
 
       // Create a stream to your file and pipe it to the stream
       // Without {end: false}, it would close up the stream, so make sure to include that.
-      console.log('Playing sound:', filename)
+      console.log(user + ' Playing sound:', filename)
       fs.access(path.join(`/home/pi/node/brave-bot/soundFiles`, `${filename}.ogg`), (err) => {
         if (err) {
           bot.sendMessage({
