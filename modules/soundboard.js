@@ -68,7 +68,7 @@ module.exports = (bot) => {
 
   function search (files, userID, keyword) {
     files = files.filter(file => file.includes(keyword))
-    if (files === []) {
+    if (_.isEmpty(files)) {
       bot.sendMessage({
         to: userID,
         message: 'No sounds like that'
