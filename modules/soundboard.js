@@ -10,7 +10,7 @@ module.exports = (bot) => {
       if (message === '$list') {
         fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (err, files) => {
           if (err) console.log(err)
-          list(list, userID)
+          list(files, userID)
         })
         return
       }
