@@ -45,7 +45,7 @@ module.exports = (bot) => {
     files.forEach((row) => {
       str += row.join('\t') + '\n'
     })
-
+    console.log(str)
     return str
   }
 
