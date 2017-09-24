@@ -67,6 +67,8 @@ module.exports = (bot) => {
   }
 
   function search (files, userID, keyword) {
+    console.log(keyword)
+    console.log(files.length)
     files = files.filter(file => file.includes(keyword))
     console.log(files)
     list(files, userID)
