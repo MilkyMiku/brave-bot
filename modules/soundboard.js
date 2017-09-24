@@ -10,10 +10,7 @@ module.exports = (bot) => {
       if (message === '$list') {
         fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (err, files) => {
           if (err) console.log(err)
-          bot.sendMessage({
-            to: userID,
-            message: 'Currently there are: ' + files.length + ' sounds\n' + list(files)
-          })
+          list(list, userID)
         })
         return
       }
@@ -39,14 +36,29 @@ module.exports = (bot) => {
     }
   })
 
-  function list (files) {
+  function list (files, userID) {
+    bot.sendMessage({
+      to: userID,
+      message: 'Currently there are: ' + files.length + ' sounds'
+    })
     files = _.chunk(files.map(file => _.padEnd(_.replace(file, '.ogg', ''), 20)), 4)
     let str = ''
     files.forEach((row) => {
       str += row.join('\t') + '\n'
     })
+    let lists = []
+    while (str.length > 1920) {
+      lists.push(str.slice(0, 1920))
+      str = str.slice(1920)
+      console.log('pls no infinite loop')
+    }
     console.log(str)
-    return str
+    lists.forEach((list) => {
+      bot.sendMessage({
+        to: userID,
+        message: list
+      })
+    })
   }
 
   function playSound (channelID, filename, user) {
