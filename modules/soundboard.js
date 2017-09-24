@@ -7,9 +7,14 @@ module.exports = (bot) => {
     if (userID !== bot.id) console.log(`${user} said ${message}`)
     if (message.startsWith('$')) {
       if (message === '$list') {
+        let keyword = message.replace('$list').trim()
         fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (err, files) => {
           if (err) console.log(err)
-          list(files, userID)
+          if (keyword === '') {
+            list(files, userID)
+          } else {
+            search(files, userID, keyword)
+          }
         })
         return
       }
@@ -59,6 +64,10 @@ module.exports = (bot) => {
         })
       }, i * 1000)
     })
+  }
+
+  function search (files, userID, keyword) {
+    list(files.filter(file => file.includes(keyword)))
   }
 
   function playSound (channelID, filename, user) {
