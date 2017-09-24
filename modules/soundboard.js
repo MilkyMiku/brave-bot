@@ -1,11 +1,10 @@
 const fs = require('fs')
 const _ = require('lodash')
 const path = require('path')
-const table = require('text-table')
 
 module.exports = (bot) => {
   bot.on('message', (user, userID, channelID, message, event) => {
-    console.log(`${user} said ${message}`)
+    if (userID !== bot.id) console.log(`${user} said ${message}`)
     if (message.startsWith('$')) {
       if (message === '$list') {
         fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (err, files) => {
@@ -41,7 +40,7 @@ module.exports = (bot) => {
       to: userID,
       message: 'Currently there are: ' + files.length + ' sounds'
     })
-    files = _.chunk(files.map(file => _.padEnd(_.replace(file, '.ogg', ''), 20)), 4)
+    files = _.chunk(files.map(file => _.padEnd(_.replace(file, '.ogg', ''), 25)), 4)
     let str = ''
     files.forEach((row) => {
       str += row.join('\t') + '\n'
@@ -52,6 +51,7 @@ module.exports = (bot) => {
       str = str.slice(1920)
       console.log('pls no infinite loop')
     } while (str.length > 1920)
+    lists.push('```' + str + '```')
     console.log(str)
     lists.forEach((list, i) => {
       setTimeout(() => {
