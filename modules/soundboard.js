@@ -47,11 +47,11 @@ module.exports = (bot) => {
       str += row.join('\t') + '\n'
     })
     let lists = []
-    while (str.length > 1920) {
-      lists.push(str.slice(0, 1920))
+    do {
+      lists.push('```' + str.slice(0, 1920) + '```')
       str = str.slice(1920)
       console.log('pls no infinite loop')
-    }
+    } while (str.length > 1920)
     console.log(str)
     lists.forEach((list, i) => {
       setTimeout(() => {
