@@ -67,11 +67,15 @@ module.exports = (bot) => {
   }
 
   function search (files, userID, keyword) {
-    console.log(keyword)
-    console.log(files.length)
     files = files.filter(file => file.includes(keyword))
-    console.log(files)
-    list(files, userID)
+    if (files === []) {
+      bot.sendMessage({
+        to: userID,
+        message: 'No sounds like that'
+      })
+    } else {
+      list(files, userID)
+    }
   }
 
   function playSound (channelID, filename, user) {
