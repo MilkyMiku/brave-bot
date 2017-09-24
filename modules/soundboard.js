@@ -11,6 +11,10 @@ module.exports = (bot) => {
         fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (err, files) => {
           if (err) console.log(err)
           if (keyword === '') {
+            bot.sendMessage({
+              to: userID,
+              message: 'Currently there are: ' + files.length + ' sounds'
+            })
             list(files, userID)
           } else {
             search(files, userID, keyword)
@@ -41,10 +45,6 @@ module.exports = (bot) => {
   })
 
   function list (files, userID) {
-    bot.sendMessage({
-      to: userID,
-      message: 'Currently there are: ' + files.length + ' sounds'
-    })
     files = _.chunk(files.map(file => _.padEnd(_.replace(file, '.ogg', ''), 25)), 4)
     let str = '```'
     let lists = []
