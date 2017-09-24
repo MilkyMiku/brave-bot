@@ -7,7 +7,7 @@ module.exports = (bot) => {
     if (userID !== bot.id) console.log(`${user} said ${message}`)
     if (message.startsWith('$')) {
       if (message.startsWith('$list')) {
-        let keyword = message.replace('$list').trim()
+        let keyword = message.replace('$list', '').trim()
         fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (err, files) => {
           if (err) console.log(err)
           if (keyword === '') {
