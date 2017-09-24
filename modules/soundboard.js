@@ -11,7 +11,7 @@ module.exports = (bot) => {
         fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (err, list) => {
           if (err) console.log(err)
           bot.sendMessage({
-            to: channelID,
+            to: userID,
             message: 'Currently there are: ' + list.length + ' sounds\n' + table(_.chunk(list.map(str => _.replace(str, '.ogg', '')), 1))
           })
         })
