@@ -6,14 +6,13 @@ const table = require('text-table')
 module.exports = (bot) => {
   bot.on('message', (user, userID, channelID, message, event) => {
     console.log(`${user} said ${message}`)
-    if (message.startsWith('$') || message.startsWith(':')) {
+    if (message.startsWith('$')) {
       if (message === '$list') {
         fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (err, list) => {
           if (err) console.log(err)
-          let format = _.flow(_.replace, _.partialRight(_.padEnd, 20))
           bot.sendMessage({
             to: channelID,
-            message: table(_.chunk(list.map(str => format(str, '.ogg', '')), 5), {align: ['l', 'l', 'l', 'l', 'l']})
+            message: table(_.chunk(list.map(str => _.replace(str, '.ogg', '')), 3))
           })
         })
         return
@@ -32,7 +31,7 @@ module.exports = (bot) => {
       bot.joinVoiceChannel(channelID, (error, events) => {
         if (error) console.error(error.message)
         try {
-          playSound(channelID, _.replace(_.replace(message.toLowerCase(), '$', ''), /(<:)(w*)(:[0-9]*)/g, ''), user)
+          playSound(channelID, _.replace(message.toLowerCase(), '$', ''), user)
         } catch (e) {
           console.log(e)
         }
