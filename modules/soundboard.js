@@ -67,7 +67,7 @@ module.exports = (bot) => {
   }
 
   function search (files, userID, keyword) {
-    list(files.filter(file => file.includes(keyword)))
+    list(files.filter(file => file.includes(keyword)), userID)
   }
 
   function playSound (channelID, filename, user) {
