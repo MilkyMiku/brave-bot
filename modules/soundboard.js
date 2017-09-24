@@ -12,7 +12,7 @@ module.exports = (bot) => {
           if (err) console.log(err)
           bot.sendMessage({
             to: channelID,
-            message: 'Currently there are: ' + list.length + 'sounds\n' + table(_.chunk(list.map(str => _.replace(str, '.ogg', '')), 1))
+            message: 'Currently there are: ' + list.length + ' sounds\n' + table(_.chunk(list.map(str => _.replace(str, '.ogg', '')), 1))
           })
         })
         return
