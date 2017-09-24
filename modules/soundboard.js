@@ -41,18 +41,16 @@ module.exports = (bot) => {
       message: 'Currently there are: ' + files.length + ' sounds'
     })
     files = _.chunk(files.map(file => _.padEnd(_.replace(file, '.ogg', ''), 25)), 4)
-    let str = ''
+    let str = '```'
+    let lists = []
     files.forEach((row) => {
       str += row.join('\t') + '\n'
+      if (str.length > 1800) {
+        lists.push(str + '```')
+        str = '```'
+      }
     })
-    let lists = []
-    do {
-      lists.push('```' + str.slice(0, 1900) + '```')
-      str = str.slice(1900)
-      console.log('pls no infinite loop')
-    } while (str.length > 1900)
-    lists.push('```' + str + '```')
-    console.log(str)
+    lists.push(str + '```')
     lists.forEach((list, i) => {
       setTimeout(() => {
         bot.sendMessage({
