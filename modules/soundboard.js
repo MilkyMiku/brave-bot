@@ -8,11 +8,11 @@ module.exports = (bot) => {
     console.log(`${user} said ${message}`)
     if (message.startsWith('$')) {
       if (message === '$list') {
-        fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (err, list) => {
+        fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (err, files) => {
           if (err) console.log(err)
           bot.sendMessage({
             to: userID,
-            message: 'Currently there are: ' + list.length + ' sounds\n' + table(_.chunk(list.map(str => _.replace(str, '.ogg', '')), 1))
+            message: 'Currently there are: ' + files.length + ' sounds\n' + list(files)
           })
         })
         return
@@ -38,6 +38,16 @@ module.exports = (bot) => {
       })
     }
   })
+
+  function list (files) {
+    files = _.chunk(files.map(file => _.padEnd(_.replace(file, '.ogg', ''), 20)), 4)
+    let str = ''
+    files.forEach((row) => {
+      str += row.join('\t') + '\n'
+    })
+
+    return str
+  }
 
   function playSound (channelID, filename, user) {
     // Then get the audio context
