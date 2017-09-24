@@ -47,10 +47,10 @@ module.exports = (bot) => {
     })
     let lists = []
     do {
-      lists.push('```' + str.slice(0, 1920) + '```')
-      str = str.slice(1920)
+      lists.push('```' + str.slice(0, 1900) + '```')
+      str = str.slice(1900)
       console.log('pls no infinite loop')
-    } while (str.length > 1920)
+    } while (str.length > 1900)
     lists.push('```' + str + '```')
     console.log(str)
     lists.forEach((list, i) => {
