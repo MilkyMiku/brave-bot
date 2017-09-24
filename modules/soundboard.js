@@ -53,11 +53,13 @@ module.exports = (bot) => {
       console.log('pls no infinite loop')
     }
     console.log(str)
-    lists.forEach((list) => {
-      bot.sendMessage({
-        to: userID,
-        message: list
-      })
+    lists.forEach((list, i) => {
+      setTimeout(() => {
+        bot.sendMessage({
+          to: userID,
+          message: list
+        })
+      }, i * 1000)
     })
   }
 
