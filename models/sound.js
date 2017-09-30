@@ -71,7 +71,7 @@ async function played (name) {
   try {
     let count = await read(name, `SELECT playcount FROM sound WHERE name = $1`)
     console.log(count.rows[0].playcount)
-    let res = await db.query(UPDATE, [++count, name])
+    let res = await db.query(UPDATE, [++count.rows[0].playcount, name])
     console.log(res)
   } catch (e) {
     console.log(e)
