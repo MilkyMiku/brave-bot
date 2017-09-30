@@ -6,5 +6,8 @@ fs.readdir(`/home/pi/node/brave-bot/soundFiles`, (err, files) => {
   if (err) console.log(err)
 
   files = files.map(file => _.replace(file, '.ogg', ''))
-  console.log(files)
+
+  files.forEach(async (elem) => {
+    console.log(await s.create(elem))
+  })
 })
