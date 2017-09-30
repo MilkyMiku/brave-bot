@@ -2,7 +2,7 @@ const _ = require('lodash')
 
 module.exports = (bot) => {
   bot.on('message', function (user, userID, channelID, message, event) {
-    if (message.startsWith('!_.random')) {
+    if (message.startsWith('!roll')) {
       bot.sendMessage({
         to: channelID,
         message: doRoll(message)
@@ -27,17 +27,13 @@ module.exports = (bot) => {
         message: flip[_.random(0, 1)]
       })
     }
-
-    if (message === 'DUCE') {
-      // play Duce soundclip
-    }
   })
 
   function doRoll (message) {
     let parts = message.split(' ')
     if (parts.length === 1) return _.random(1, 99)
-    if (parts.length === 2) return _.random(1, parseInt(parts[1]), 10)
-    if (parts.length === 3) return _.random(parseInt(parts[1], 10), parseInt(parts[2]), 10)
+    if (parts.length === 2) return _.random(1, parts[1])
+    if (parts.length === 3) return _.random(parts[1], parts[2])
     return 'thats not how you do that'
   }
 }
