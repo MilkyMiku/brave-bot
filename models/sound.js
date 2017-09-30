@@ -28,7 +28,7 @@ async function create (name, db) {
     // get info
     let rs = fs.createReadStream(dir(name))
     let stats = fs.statSync(dir(name))
-    let upload = moment(stats.birthtimeMs).format('YYYY-MM-DD HH:MM:SS')
+    let upload = moment(_.floor(stats.birthtimeMs, 0)).format('YYYY-MM-DD HH:MM:SS')
     let meta = await mm(rs, {duration: true})
     let duration = _.round(meta.duration, 2)
     rs.close()
