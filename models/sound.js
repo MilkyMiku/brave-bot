@@ -114,6 +114,7 @@ async function _new () {
 // return 10 newest sounds
 async function duration (name) {
   try {
+    console.log(name)
     let res = await db.query(`SELECT duration FROM sound WHERE name = $1`, [name])
     console.log(res)
     return `${name} is ${res.rows[0].duration} second(s)`
