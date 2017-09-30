@@ -35,13 +35,10 @@ async function create (name, db) {
 
     // send to db
     // var db = new pg.Client()
-    await db.connect()
     let res = await db.query(INSERT, [name, duration, upload, 0])
     return res
   } catch (e) {
     return e
-  } finally {
-    db.end()
   }
 }
 
