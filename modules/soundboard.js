@@ -1,6 +1,7 @@
 const fs = require('fs')
 const _ = require('lodash')
 const path = require('path')
+const sound = require('./models/sound.js')
 
 module.exports = (bot) => {
   bot.on('message', (user, userID, channelID, message, event) => {
@@ -95,9 +96,9 @@ module.exports = (bot) => {
           })
         } else {
           try {
-            var read = fs.createReadStream(
-              path.join(`/home/pi/node/brave-bot/soundFiles`, `${filename}.ogg`))
+            var read = fs.createReadStream(path.join(`/home/pi/node/brave-bot/soundFiles`, `${filename}.ogg`))
             read.on('open', () => {
+              sound.played(filename)
               read.pipe(stream, {
                 end: false
               })
