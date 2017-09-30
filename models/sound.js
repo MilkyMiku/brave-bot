@@ -115,6 +115,7 @@ async function _new () {
 async function duration (name) {
   try {
     let res = await db.query(`SELECT duration FROM sound WHERE name = $1`, [name])
+    console.log(res)
     return `${name} is ${res.rows[0].duration} second(s)`
   } catch (e) {
     return 'something broke' + e
