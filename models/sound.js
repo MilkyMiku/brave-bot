@@ -17,7 +17,6 @@ const _ = require('lodash')
 const INSERT = `INSERT INTO sound(name, duration, upload, playcount) VALUES($1, $2, $3, $4) RETURNING *`
 const DELETE = ``
 const UPDATE = ``
-const READ = `SELECT * FROM sound WHERE name = ${name}`
 
 function dir (name) {
   return path.join(`/home/pi/node/brave-bot/soundFiles`, `${name}.ogg`)
