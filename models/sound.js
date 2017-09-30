@@ -11,23 +11,31 @@ const promisify = require('util').promisify
 const mm = promisify(require('musicmetadata'))
 const path = require('path')
 const pg = require('pg')
-// a sound object or some shit witht he fields
+const moment = require('moment')
 
-function dir (sound) {
-  return path.join(`/home/pi/node/brave-bot/soundFiles`, `${sound}.ogg`)
+const INSERT = `INSERT INTO users(name, duration) VALUES($1, $2) RETURNING *`
+const DELETE = ``
+const UPDATE = ``
+const READ = ``
+
+function dir (name) {
+  return path.join(`/home/pi/node/brave-bot/soundFiles`, `${name}.ogg`)
 }
 
-async function create (sound) {
+async function create (name) {
+  let rs = fs.createReadStream(dir(name))
+  let stats = fs.statSync(dir(name))
+  let meta = await mm(rs, {duration: true})
+  let duration = meta.duration
   const db = new pg.Client()
   await db.connect()
-  let rs = fs.createReadStream(dir(sound))
-  let meta = await mm(rs, {duration: true})
-  console.log(meta)
+  console.log(duration)
+  console.log(moment(stats.birthtimeMs, 'YYYY-MM-DD HH:MM:SS'))
   rs.close()
   return meta
 }
 
-async function update (sound) {
+async function update (name) {
 
 }
 
