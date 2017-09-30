@@ -1,7 +1,7 @@
 const fs = require('fs')
 const _ = require('lodash')
 const path = require('path')
-const sound = require('./models/sound.js')
+const sound = require('../models/sound.js')
 
 module.exports = (bot) => {
   bot.on('message', (user, userID, channelID, message, event) => {
