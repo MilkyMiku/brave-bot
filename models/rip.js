@@ -4,6 +4,7 @@ const _ = require('lodash')
 // const db = require('../db')
 const pg = require('pg')
 const path = require('path')
+const moment = require('moment')
 
 fs.readdir(`/home/pi/node/brave-bot/soundFiles`, async (err, files) => {
   if (err) console.log(err)
@@ -12,7 +13,7 @@ fs.readdir(`/home/pi/node/brave-bot/soundFiles`, async (err, files) => {
 
   files.forEach((elem) => {
     let stats = fs.statSync(path.join(`/home/pi/node/brave-bot/soundFiles`, `${elem}.ogg`))
-    console.log(stats.birthtime)
+    console.log(stats.birthtime + '  -------  ' + moment(stats.birthtime).format('YYYY-MM-DD HH:MM:SS'))
   })
 
   // let db = new pg.Client()
