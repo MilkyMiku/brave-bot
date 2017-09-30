@@ -74,6 +74,7 @@ async function played (name) {
     let res = await db.query(UPDATE, [++count, name])
     console.log(res)
   } catch (e) {
+    console.log(e)
     // make a new record if doesnt exist
     create(name)
   }
