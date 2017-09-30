@@ -14,7 +14,7 @@ const pg = require('pg')
 const moment = require('moment')
 const _ = require('lodash')
 
-const INSERT = `INSERT INTO sound(name, duration, upload, playcount) VALUES($1, NOW(), $2, $3) RETURNING *`
+const INSERT = `INSERT INTO sound(name, duration, upload, playcount) VALUES($1, $2, $3, $4) RETURNING *`
 const DELETE = ``
 const UPDATE = ``
 const READ = ``
@@ -36,7 +36,7 @@ async function create (name) {
     // send to db
     var db = new pg.Client()
     await db.connect()
-    let res = await db.query(INSERT, [name, upload, 0])
+    let res = await db.query(INSERT, [name, duration, upload, 0])
     return res
   } catch (e) {
     return e
