@@ -39,6 +39,7 @@ module.exports = (bot) => {
           to: userID,
           message: await sound.top10()
         })
+        return
       }
 
       if (message === '$new') {
@@ -46,6 +47,7 @@ module.exports = (bot) => {
           to: userID,
           message: await sound.new()
         })
+        return
       }
 
       bot.joinVoiceChannel(channelID, (error, events) => {
