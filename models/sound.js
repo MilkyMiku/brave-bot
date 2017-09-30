@@ -17,7 +17,7 @@ const _ = require('lodash')
 const INSERT = `INSERT INTO sound(name, duration, upload, playcount) VALUES($1, $2, $3, $4) RETURNING *`
 const DELETE = ``
 const UPDATE = ``
-const READ = ``
+const READ = `SELECT * FROM sound WHERE name = ${name}`
 
 function dir (name) {
   return path.join(`/home/pi/node/brave-bot/soundFiles`, `${name}.ogg`)
@@ -51,7 +51,17 @@ async function update (name) {
 
 // this1 takes the name oft eh sodn
 async function read (name) {
-
+  const READ = `SELECT * FROM sound WHERE name = ${name}`
+  try {
+    var db = new pg.Client()
+    await db.connect()
+    let res = await db.query(READ)
+    return res
+  } catch (e) {
+    return e
+  } finally {
+    db.end()
+  }
 }
 
 // asasem shit
