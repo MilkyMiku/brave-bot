@@ -86,7 +86,7 @@ async function played (name) {
 async function top10 () {
   try {
     let res = await db.query(`SELECT name, playcount FROM sound ORDER BY playcount DESC LIMIT 10`)
-    let str = '\n'
+    let str = 'Top 10 Most played:\n'
     res.rows.forEach((row) => {
       str += `${row.playcount}\t${row.name}\n`
     })
