@@ -35,7 +35,17 @@ module.exports = (bot) => {
       }
 
       if (message === '$top10') {
+        bot.sendMessage({
+          to: userID,
+          message: sound.top10()
+        })
+      }
 
+      if (message === '$new') {
+        bot.sendMessage({
+          to: userID,
+          message: sound.new()
+        })
       }
 
       bot.joinVoiceChannel(channelID, (error, events) => {
