@@ -50,6 +50,15 @@ module.exports = (bot) => {
         return
       }
 
+      if (message.startsWith('$duration')) {
+        let name = message.replace('$list', '').trim()
+        bot.sendMessage({
+          to: userID,
+          message: await sound.duration(name)
+        })
+        return
+      }
+
       bot.joinVoiceChannel(channelID, (error, events) => {
         if (error) console.error(error.message)
         try {

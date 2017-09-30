@@ -5,7 +5,8 @@ module.exports = {
   delete: _delete,
   played,
   top10,
-  new: _new
+  new: _new,
+  duration
 }
 
 // const db = require('../db')
@@ -105,6 +106,16 @@ async function _new () {
       str += `${row.name}\n`
     })
     return str
+  } catch (e) {
+    return 'something broke' + e
+  }
+}
+
+// return 10 newest sounds
+async function duration (name) {
+  try {
+    let res = await db.query(`SELECT duration FROM sound WHERE name = $1`, [name])
+    return `${name} is ${res.rows[0].duration} second(s)`
   } catch (e) {
     return 'something broke' + e
   }
