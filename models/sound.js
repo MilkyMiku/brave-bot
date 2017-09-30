@@ -70,9 +70,9 @@ async function played (name) {
   // get record playcount
   try {
     let count = await read(name, `SELECT playcount FROM sound WHERE name = $1`)
-    console.log(count)
-    // let res = await db.query(UPDATE, [++count, name])
-    // console.log(res)
+    console.log(count.rows[0].playcount)
+    let res = await db.query(UPDATE, [++count, name])
+    console.log(res)
   } catch (e) {
     // make a new record if doesnt exist
     create(name)
