@@ -4,7 +4,7 @@ const path = require('path')
 const sound = require('../models/sound.js')
 
 module.exports = (bot) => {
-  bot.on('message', (user, userID, channelID, message, event) => {
+  bot.on('message', async (user, userID, channelID, message, event) => {
     if (message.startsWith('$')) {
       console.log(`${user} said ${message}`)
       if (message.startsWith('$list')) {
@@ -37,14 +37,14 @@ module.exports = (bot) => {
       if (message === '$top10') {
         bot.sendMessage({
           to: userID,
-          message: sound.top10()
+          message: await sound.top10()
         })
       }
 
       if (message === '$new') {
         bot.sendMessage({
           to: userID,
-          message: sound.new()
+          message: await sound.new()
         })
       }
 
