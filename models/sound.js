@@ -22,6 +22,7 @@ async function create (sound) {
   await db.connect()
   let rs = fs.createReadStream(dir(sound))
   let meta = await mm(rs, {duration: true})
+  console.log(meta)
   rs.close()
   return meta
 }
