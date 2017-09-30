@@ -34,6 +34,10 @@ module.exports = (bot) => {
         return
       }
 
+      if (message === '$top10') {
+
+      }
+
       bot.joinVoiceChannel(channelID, (error, events) => {
         if (error) console.error(error.message)
         try {

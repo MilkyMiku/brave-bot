@@ -3,7 +3,9 @@ module.exports = {
   read,
   update,
   delete: _delete,
-  played
+  played,
+  top10,
+  new: _new
 }
 
 // const db = require('../db')
@@ -70,12 +72,22 @@ async function played (name) {
   // get record playcount
   try {
     let count = await read(name, `SELECT playcount FROM sound WHERE name = $1`)
-    console.log(count.rows[0].playcount)
+    // console.log(count.rows[0].playcount)
     let res = await db.query(UPDATE, [++count.rows[0].playcount, name])
-    console.log(res)
+    // console.log(res)
   } catch (e) {
     console.log(e)
     // make a new record if doesnt exist
     create(name)
   }
+}
+
+// return the top 10 most played
+async function top10 () {
+  let res = await db.query()
+}
+
+// return 10 newest sounds
+async function _new () {
+
 }

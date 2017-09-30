@@ -1,4 +1,5 @@
 const _ = require('lodash')
+const ball = require('../dataSets/eightBall')
 
 module.exports = (bot) => {
   bot.on('message', function (user, userID, channelID, message, event) {
@@ -25,6 +26,13 @@ module.exports = (bot) => {
       bot.sendMessage({
         to: channelID,
         message: flip[_.random(0, 1)]
+      })
+    }
+
+    if (message.startsWith('!8ball')) {
+      bot.sendMessage({
+        to: channelID,
+        message: ball[_.random(0, 19)]
       })
     }
   })
