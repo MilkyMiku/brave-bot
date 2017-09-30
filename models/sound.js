@@ -12,6 +12,7 @@ const mm = promisify(require('musicmetadata'))
 const path = require('path')
 const pg = require('pg')
 const moment = require('moment')
+const _ = require('lodash')
 
 const INSERT = `INSERT INTO users(name, duration) VALUES($1, $2) RETURNING *`
 const DELETE = ``
@@ -26,7 +27,7 @@ async function create (name) {
   let rs = fs.createReadStream(dir(name))
   let stats = fs.statSync(dir(name))
   let meta = await mm(rs, {duration: true})
-  let duration = meta.duration
+  let duration = _.round(meta.duration, 2)
   const db = new pg.Client()
   await db.connect()
   console.log(duration)
