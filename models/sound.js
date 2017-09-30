@@ -23,7 +23,7 @@ function dir (name) {
   return path.join(`/home/pi/node/brave-bot/soundFiles`, `${name}.ogg`)
 }
 
-async function create (name) {
+async function create (name, db) {
   try {
     // get info
     let rs = fs.createReadStream(dir(name))
@@ -34,7 +34,7 @@ async function create (name) {
     rs.close()
 
     // send to db
-    var db = new pg.Client()
+    // var db = new pg.Client()
     await db.connect()
     let res = await db.query(INSERT, [name, duration, upload, 0])
     return res
