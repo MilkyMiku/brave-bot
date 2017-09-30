@@ -47,12 +47,7 @@ async function create (name) {
 }
 
 async function update (name) {
-  try {
-    let res = await db.query(string || READ, [name])
-    return res
-  } catch (e) {
-    return e
-  }
+
 }
 
 // this1 takes the name oft eh sodn
@@ -75,9 +70,11 @@ async function played (name) {
   // get record playcount
   try {
     let count = await read(name, `SELECT playcount FROM sound WHERE name = $1`)
-    let res = await db.query(UPDATE, [++count, name])
-    return res
+    console.log(count)
+    // let res = await db.query(UPDATE, [++count, name])
+    // console.log(res)
   } catch (e) {
+    // make a new record if doesnt exist
     create(name)
   }
 }
