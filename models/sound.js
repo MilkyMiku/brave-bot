@@ -30,7 +30,7 @@ async function create (name) {
   const db = new pg.Client()
   await db.connect()
   console.log(duration)
-  console.log(moment(stats.birthtimeMs, 'YYYY-MM-DD HH:MM:SS'))
+  console.log(moment(stats.birthtimeMs).format('YYYY-MM-DD HH:MM:SS'))
   rs.close()
   return meta
 }
