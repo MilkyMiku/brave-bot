@@ -51,7 +51,7 @@ module.exports = (bot) => {
       }
 
       if (message.startsWith('$duration')) {
-        let name = message.replace('$list', '').trim()
+        let name = message.replace('$duration', '').trim()
         bot.sendMessage({
           to: userID,
           message: await sound.duration(name)
