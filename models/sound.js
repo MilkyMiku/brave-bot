@@ -14,7 +14,7 @@ const pg = require('pg')
 const moment = require('moment')
 const _ = require('lodash')
 
-const INSERT = `INSERT INTO users(name, duration, upload, playcount) VALUES($1, NOW(), $2, $3) RETURNING *`
+const INSERT = `INSERT INTO sound(name, duration, upload, playcount) VALUES($1, NOW(), $2, $3) RETURNING *`
 const DELETE = ``
 const UPDATE = ``
 const READ = ``
