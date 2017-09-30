@@ -98,5 +98,14 @@ async function top10 () {
 
 // return 10 newest sounds
 async function _new () {
-
+  try {
+    let res = await db.query(`SELECT name FROM sound ORDER BY upload DESC LIMIT 10`)
+    let str = 'Top 10 Newest sounds:\n'
+    res.rows.forEach((row) => {
+      str += `${row.name}\n`
+    })
+    return str
+  } catch (e) {
+    return 'something broke' + e
+  }
 }
