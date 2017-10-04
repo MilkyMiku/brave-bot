@@ -34,31 +34,6 @@ module.exports = (bot) => {
         return
       }
 
-      if (message === '$top10') {
-        bot.sendMessage({
-          to: userID,
-          message: await sound.top10()
-        })
-        return
-      }
-
-      if (message === '$new') {
-        bot.sendMessage({
-          to: userID,
-          message: await sound.new()
-        })
-        return
-      }
-
-      if (message.startsWith('$duration')) {
-        let name = message.replace('$duration', '').trim()
-        bot.sendMessage({
-          to: userID,
-          message: await sound.duration(name)
-        })
-        return
-      }
-
       bot.joinVoiceChannel(channelID, (error, events) => {
         if (error) console.error(error.message)
         try {

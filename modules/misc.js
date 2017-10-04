@@ -35,6 +35,25 @@ module.exports = (bot) => {
         message: ball[_.random(0, 19)]
       })
     }
+
+    if (message === '$shinaikara') {
+      bot.sendMessage({
+        to: channelID,
+        message: `<:shinaikara:325273515710480385>`
+      })
+      setTimeout(() => {
+        bot.sendMessage({
+          to: channelID,
+          message: `<:D_:325274306588311554>`
+        })
+        setTimeout(() => {
+          bot.sendMessage({
+            to: channelID,
+            message: `<:O_:325273940542881802>`
+          })
+        }, 1000)
+      }, 500)
+    }
   })
 
   function doRoll (message) {
