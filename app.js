@@ -30,5 +30,6 @@ require('./modules/misc')(bot)
 require('./modules/ultimatebravery')(bot)
 require('./modules/pubg')(bot)
 require('./modules/soundboard')(bot)
+require('./modules/statistics')(bot)
 
 module.exports = bot
