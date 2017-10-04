@@ -63,7 +63,7 @@ module.exports = (bot) => {
           to: userID,
           message: list
         })
-      }, i * 1000)
+      }, i * 2000)
     })
   }
 
