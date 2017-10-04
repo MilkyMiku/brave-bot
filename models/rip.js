@@ -23,4 +23,4 @@ const moment = require('moment')
 //   })
 // })
 
-s.played('2016')
+s.top10().then(console.log)
